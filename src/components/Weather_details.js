@@ -21,6 +21,7 @@ function Weather_details(props) {
   const changeName = (event) => {
     event.preventDefault();
     setName(event.target.elements.loc.value);
+    event.target.elements.loc.value = "";
   };
   if (weather) {
     console.log(weather);
@@ -29,25 +30,34 @@ function Weather_details(props) {
         <div className="right_positioning">
           <form onSubmit={changeName}>
             <input type="text" name="loc"></input>
-            <button type="submit"> &#128269;</button>
+            <button type="submit" className="sumbitbtn">
+              <div className="divimg">
+                <img src="./search.png" width="20px"></img>
+              </div>
+            </button>
           </form>
-          <h2>Weather details</h2>
-          <div>
-            <h3>Temperature - {weather.data.main.temp}</h3>
-          </div>
-          <div>
-            <h3>Pressure - {weather.data.main.pressure}</h3>
-          </div>
-          <div>
-            <h3>Humidity - {weather.data.main.humidity}%</h3>
-          </div>
-          <div>
-            <h3>Wind Speed - {weather.data.wind.speed}m/s</h3>
-          </div>
-          <div>
-            <h3>Clouds - {weather.data.clouds.all}%</h3>
+          <div className="details">
+            <text>
+              <strong>Weather details</strong>
+            </text>
+            <div className="detail">
+              <text>Temperature - {weather.data.main.temp}</text>
+            </div>
+            <div className="detail">
+              <text>Pressure - {weather.data.main.pressure}</text>
+            </div>
+            <div className="detail">
+              <text>Humidity - {weather.data.main.humidity}%</text>
+            </div>
+            <div className="detail">
+              <text>Wind Speed - {weather.data.wind.speed}m/s</text>
+            </div>
+            <div className="detail">
+              <text>Clouds - {weather.data.clouds.all}%</text>
+            </div>
           </div>
         </div>
+
         <div className="bottom_positioning">
           <div>
             <h1>
@@ -57,7 +67,6 @@ function Weather_details(props) {
           <div>
             <h2>{weather.data.weather[0].description}</h2>
           </div>
-          
         </div>
       </div>
     );
