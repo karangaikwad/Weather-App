@@ -28,6 +28,7 @@ function Weather_details(props) {
     console.log(weather);
     return (
       <div>
+        <h1>hii harshal</h1>
         <div className="right_positioning">
           <form onSubmit={changeName}>
             <input type="text" name="loc"></input>
