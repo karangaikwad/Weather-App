@@ -15,7 +15,7 @@ function Weather_details(props) {
   };
   // This will call the function which is loading the data
 //   Hello
-
+// hi am harshal
   useEffect(() => {
     apiCall();
   }, [name]);
